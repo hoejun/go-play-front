@@ -1,0 +1,63 @@
+
+<style>
+#right_frame {
+	width: 20%;
+	height: 750px;
+	float: right;
+}
+
+#overlay_div td {
+	border-style: solid;
+	border-color: #DDD;
+	border-width: 1px;
+	background-color: #fff;
+	text-align: center;
+}
+
+#location_img1 {
+	
+}
+
+iframe {
+	width: 300px;
+	height: 400px;
+}
+
+.category .menu_selected {
+	background: #FF5F4A;
+	color: #fff;
+	border-left: 1px solid #915B2F;
+	border-right: 1px solid #915B2F;
+	margin: 0 -1px;
+}
+
+.category li {
+	list-style: none;
+	float: left;
+	width: 50px;
+	height: 45px;
+	cursor: pointer;
+}
+
+.category .ico_comm {
+	display: block;
+	margin: 0 auto 2px;
+	width: 22px;
+	height: 26px;
+	background:
+		url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png')
+		no-repeat;
+}
+
+.category .ico_coffee {
+	background-position: -10px 0;
+}
+
+.category .ico_store {
+	background-position: -10px -36px;
+}
+
+.category .ico_carpark {
+	background-position: -10px -72px;
+}
+</style>

@@ -1,0 +1,316 @@
+<style type="text/css">
+@font-face {
+font-family: 'sdkfont';
+font-style: normal;
+src: url('images/sdk.ttf');
+}
+*{
+margin:0;
+font-family:sdkfont;
+font-size: 17px; 
+}
+
+#background_img {
+background: url("images/main4.jpg") no-repeat center 0;
+}
+
+#main{
+background: url("images/main4.jpg") no-repeat center 0;
+background-clip: border-box;
+width:1402px; /* window resize시 스크롤 생길 width값 */
+height:1890px;
+margin:auto;
+background-color: black;
+}
+
+
+#main_body{
+	position: absolute;
+	z-index: 2;
+	width: 910px;
+	height: 1629px;
+/* 	margin-top: 257px; */
+	margin-left: 255px;
+}
+#main_top_menu{
+	z-index: 3;
+	width: 910px;
+	height: 257px;
+/* 	background-color: black; */
+}
+
+#main_top{
+	z-index: 3;
+	width: 910px;
+	height: 407px;
+/* 	background-color: blue; */
+}
+#main_mid_left{
+	z-index: 3;
+	float: left;
+/*  background-color: yellow;  */
+	width: 220px;
+	height: 975px;
+}
+#main_mid_center{
+	z-index: 3;
+	float:left;
+/* 	background-color: green; */
+	width: 320px;
+	height: 975px;
+}
+#main_mid_right{
+	z-index: 3;
+	float:left;
+	background-color: red;
+	width: 370px;
+	height: 975px;
+}
+
+
+
+
+
+
+/* 사이드 네비게이션  */
+
+#sidebar{
+	color: #777;
+	text-align: center;
+	background-image: url("images/side3.png");
+	background-repeat: no-repeat;
+	
+}
+.navbar-fixed-left {
+	text-align: center;
+	width: 220px;
+	position: fixed;
+	left: 85%;
+	border-radius: 0;
+	height: 371px;
+}
+
+
+/* 회원가입 모달 */
+#join_modal_img{
+	width: 1065px;
+	height: 780px;
+	margin-top: 2%;
+	background-image: url("images/join2.png");
+	background-color: rgba(255,255,255,0);
+}
+#join_modal_content{
+	width: 1065px;
+	height: 780px;
+	border-width: 0;
+	background-color: rgba(255,255,255,0);
+	box-shadow: none;
+}
+#close_join_btn{
+	float: right;
+	font-size: 30px;
+}
+
+
+/* 메인 탑 로고 */
+#top_logo{
+	position: absolute;
+	left: 276px;
+	top: 8px;
+	
+}
+
+
+
+
+/* 메인 탑 메뉴 */
+/* 메뉴 버튼 4개 */
+
+#menu1{
+	position: absolute;
+	left: 304px;
+	top: 189px;
+	width: 66px;
+	height: 22px;
+}
+#menu2{
+	position: absolute;
+	left: 381px;
+	top: 189px;
+	width: 66px;
+	height: 22px;
+}
+#menu3{
+	position: absolute;
+	left: 457px;
+	top: 189px;
+	width: 66px;
+	height: 22px;
+}
+#menu4{
+	position: absolute;
+	left: 532px;
+	top: 189px;
+	width: 66px;
+	height: 22px;
+}
+#menu1:HOVER{
+	background-image: url("images/menu1.png");	
+}
+#menu2:HOVER{
+	background-image: url("images/menu2.png");	
+}
+#menu3:HOVER{
+	background-image: url("images/menu3.png");	
+}
+#menu4:HOVER{
+	background-image: url("images/menu4.png");	
+}
+
+
+
+/* 메뉴 검색창 */
+#search_text{
+	position: absolute;
+	left: 663px;
+	top: 191px;
+	width: 119px;
+	height: 21px;
+}
+/* 검색버튼 */
+#search_btn{
+	position: absolute;
+	left: 782px;
+	top: 191px;	
+	width: 69px;
+	height: 23px;
+	border-style: none;
+	border-width: 0px;
+	background-image: url("images/findButton.png");
+}
+#search_btn:HOVER{
+	background-image: url("images/findButton2.png");
+}
+
+/* 메인 탑 */
+/* 탑 캐러셀 */
+#top_carousel{
+	position: absolute;
+	left: 62px;
+	top: 317px;
+	width: 397px;
+	height: 319px;
+}
+
+/* 탑 맵 */
+#top_map{
+	position: absolute;
+	left: 477px;
+	top: 327px;
+	width: 373px;
+	height: 297px;
+}
+
+
+/* 메인 미드 레프트*/
+/* 가이드 */
+#guide{
+	position: absolute;
+	left: 9px;
+	top: 659px;
+	width: 198px;
+	height: 134px;	
+}
+#guide:HOVER{
+	background-image: url("images/guide.png");
+}
+
+/* 이달의 여행지 */
+#monthly_rank{
+	position: absolute;
+	left: 50px;
+	top: 957px;
+}
+#monthly_rank li{
+	height: 23px;
+}
+#monthly_rank a{
+	font-size: 12px;
+	line-height:0%;
+	text-decoration: none;
+}
+
+/* 미드 레프트 캐러셀 */
+#left_carousel{
+	position: absolute;
+	left: 57px;
+	top: 1319px;
+	width: 130px;
+
+}
+#left_carousel_box{
+	height: 98px;
+}
+/* 플레이 버튼 */
+#left_carousel_play_bt{
+	position: absolute;
+	left: 168px;
+	top: 1312px;
+	width: 35px;
+	height: 11px;
+	background-image: url("images/cpause.png");
+}
+
+
+/* 인디케이터 스타일 */
+#indi1{
+	position: absolute;
+	left: 56px;
+	top: 1494px;
+	width: 17px;
+	height: 24px;
+}
+#indi2{
+	position: absolute;
+	left: 74px;
+	top: 1494px;
+	width: 17px;
+	height: 24px;
+}
+#indi3{
+	position: absolute;
+	left: 92px;
+	top: 1494px;
+	width: 17px;
+	height: 24px;
+}
+#indi4{
+	position: absolute;
+	left: 110px;
+	top: 1494px;
+	width: 17px;
+	height: 24px;
+}
+#indi5{
+	position: absolute;
+	left: 128px;
+	top: 1495px;
+	width: 17px;
+	height: 24px;
+}
+#indi6{
+	position: absolute;
+	left: 146px;
+	top: 1495px;
+	width: 17px;
+	height: 24px;
+}
+#indi7{
+	position: absolute;
+	left: 164px;
+	top: 1495px;
+	width: 17px;
+	height: 24px;
+}
+/* 인디케이터 스타일 끝 */
+</style>
