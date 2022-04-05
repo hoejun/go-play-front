@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
 
-//최신버전1222
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='background_img'>
+      <div className='main'>
+        <div className='navbar navbar-fixed-left visible-lg-block' id='sidebar'>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <div id='menu_drop'>
+            <a href='#side_collapse' data-toggle='collapse' aria-expanded='false' />
+            {/* 놀러 가 보실까! <span class="caret"></span></a>
+						<div class="collapse" id="side_collapse" role="menu">
+							<a href="map.do">놀러가기</a><br/>
+							<a href="board.bo?search=">수다떨기</a><br>
+							<a href="faq.no?level=${dto.level}&search=">물어보기</a><br>
+							<a href="notice.no?level=${dto.level}&search=">소개보기</a><br>
+						</div><br>
+						<a href="index.do">홈으로</a> */}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

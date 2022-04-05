@@ -1,38 +1,534 @@
-.App {
+@font-face {
+  font-family: 'sdkfont';
+  font-style: normal;
+  src: url('images/sdk.ttf');
+}
+* {
+  margin: 0;
+  font-family: sdkfont;
+  font-size: 17px;
+}
+
+#background_img {
+  background: url('images/mainstandard.jpg') no-repeat center 0;
+}
+
+#main {
+  background: url('images/mainstandard.jpg') no-repeat center 0;
+  background-clip: border-box;
+  width: 1402px; /* window resize시 스크롤 생길 width값 */
+  height: 1890px;
+  margin: auto;
+  background-color: black;
+}
+
+#main_body {
+  position: absolute;
+  z-index: 2;
+  width: 910px;
+  height: 1629px;
+  /* 	margin-top: 257px; */
+  margin-left: 255px;
+  /* 	background-color: black; */
+}
+#main_top_menu {
+  z-index: 3;
+  width: 910px;
+  height: 257px;
+  /* 	background-color: black; */
+}
+
+#main_top {
+  z-index: 3;
+  width: 910px;
+  height: 407px;
+  /* 	background-color: blue; */
+}
+#main_mid_left {
+  z-index: 3;
+  float: left;
+  /*  background-color: yellow;  */
+  width: 220px;
+  height: 975px;
+}
+#main_mid_center {
+  z-index: 3;
+  float: left;
+  /* 	background-color: green; */
+  width: 320px;
+  height: 975px;
+}
+#main_mid_right {
+  z-index: 3;
+  float: left;
+  /* 	background-color: red; */
+  width: 370px;
+  height: 975px;
+}
+
+/* 사이드 네비게이션  */
+
+#sidebar {
+  color: #777;
+  text-align: center;
+  background-image: url('images/side3.png');
+  background-repeat: no-repeat;
+}
+.navbar-fixed-left {
+  text-align: center;
+  width: 220px;
+  position: fixed;
+  left: 85%;
+  border-radius: 0;
+  height: 371px;
+}
+
+#side_collapse a,
+#menu_drop a {
+  color: #444;
+  text-decoration: none;
+}
+#side_collapse a:hover,
+#menu_drop a:hover {
+  color: #aaa;
+}
+
+/* 회원가입 모달 */
+#join_modal_img {
+  width: 1065px;
+  height: 780px;
+  margin-top: 2%;
+  background-image: url('images/join2.png');
+  background-color: rgba(255, 255, 255, 0);
+}
+#join_modal_content {
+  width: 1065px;
+  height: 780px;
+  border-width: 0;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
+}
+#close_join_btn {
+  float: right;
+  font-size: 30px;
+}
+
+/* 회원정보 수정 모달 */
+#info_modal_img {
+  width: 1065px;
+  height: 780px;
+  margin-top: 2%;
+  background-image: url('images/join/infoForm.png');
+  background-color: rgba(255, 255, 255, 0);
+}
+#info_modal_content {
+  width: 1065px;
+  height: 780px;
+  border-width: 0;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
+}
+#close_info_btn {
+  float: right;
+  font-size: 30px;
+}
+
+/* 로그인 모달 */
+#login_modal_img {
+  width: 484px;
+  height: 528px;
+  margin-top: 2%;
+  background-image: url('images/login/loginForm.png');
+  background-color: rgba(255, 255, 255, 0);
+}
+#login_modal_content {
+  width: 484px;
+  height: 528px;
+  border-width: 0;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
+}
+#close_login_btn {
+  float: right;
+  font-size: 30px;
+}
+#login_id {
+  position: absolute;
+  left: 229px;
+  top: 96px;
+  width: 151px;
+  height: 22px;
+}
+#login_pass {
+  position: absolute;
+  left: 229px;
+  top: 147px;
+  width: 151px;
+  height: 22px;
+}
+
+#login_submit {
+  background-image: url('images/login/loginBtn.png');
+  position: absolute;
+  left: 286px;
+  top: 194px;
+  width: 99px;
+  height: 37px;
+}
+#login_submit:hover {
+  background-image: url('images/login/loginBtn2.png');
+}
+
+#idpw_btn {
+  background-image: url('images/login/searchLogin2.png');
+  position: absolute;
+  left: 288px;
+  top: 346px;
+  width: 121px;
+  height: 84px;
+}
+#idpw_btn:hover {
+  background-image: url('images/login/searchLogin.png');
+}
+
+#idpw_modal_img {
+  width: 860px;
+  height: 505px;
+  margin-top: 2%;
+  background-image: url('images/login/idpw.png');
+  background-color: rgba(255, 255, 255, 0);
+}
+#idpw_modal_content {
+  width: 860px;
+  height: 505px;
+  border-width: 0;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
+}
+#close_idpw_btn {
+  float: right;
+  font-size: 30px;
+}
+
+/* 메인 탑 로고 */
+#top_logo {
+  position: absolute;
+  left: 0px;
+  top: 150px;
+  width: 200px;
+  height: 150px;
+}
+
+/* 메인 탑 메뉴 */
+/* 로그인 및 회원정보 */
+#login {
+  z-index: 5;
+  background-image: url('images/shortLabel.png');
+  position: absolute;
+  left: 129px;
+  top: 1px;
+  width: 365px;
+  height: 90px;
+}
+
+#a_login {
+  background-image: url('images/login.png');
+  position: absolute;
+  left: 173px;
+  top: 34px;
+  width: 41px;
+  height: 19px;
+}
+
+#a_join {
+  background-image: url('images/joina.png');
+  position: absolute;
+  left: 236px;
+  top: 34px;
+  width: 55px;
+  height: 19px;
+}
+#a_login:hover {
+  background-image: url('images/login2.png');
+  position: absolute;
+  left: 169px;
+  top: 31px;
+  width: 49px;
+  height: 25px;
+}
+#a_join:hover {
+  background-image: url('images/joina2.png');
+  position: absolute;
+  left: 232px;
+  top: 31px;
+  width: 63px;
+  height: 25px;
+}
+#logout {
+  background-image: url('images/topmemu/logout.png');
+  position: absolute;
+  left: 325px;
+  top: 21px;
+  width: 82px;
+  height: 41px;
+}
+#logout:hover {
+  background-image: url('images/topmemu/logout2.png');
+}
+#a_info {
+  background-image: url('images/topmemu/mypage.png');
+  position: absolute;
+  left: 420px;
+  top: 22px;
+  width: 72px;
+  height: 41px;
+}
+#a_info:hover {
+  background-image: url('images/topmemu/mypage2.png');
+}
+#admin_info {
+  background-image: url('images/topmemu/adminpage.png');
+  position: absolute;
+  left: 420px;
+  top: 22px;
+  width: 72px;
+  height: 41px;
+}
+#admin_info:hover {
+  background-image: url('images/topmemu/adminpage2.png');
+}
+#welcome {
+  position: absolute;
+  left: 175px;
+  top: 30px;
+  width: 200px;
+  height: 19px;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #000;
+  color: #222;
+  font-size: 15px;
+}
+/* 탑메뉴 컬렙스 */
+#myMenu_collapse {
+  z-index: 4;
+  background-image: url('images/menu_dropdown.png');
+  position: absolute;
+  left: 381px;
+  top: 68px;
+  width: 154px;
+  height: 96px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#myMenu_collapse a {
+  text-decoration: none;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* 메뉴 버튼 4개 */
+#menu1 {
+  position: absolute;
+  left: 304px;
+  top: 189px;
+  width: 66px;
+  height: 22px;
+}
+#menu2 {
+  position: absolute;
+  left: 381px;
+  top: 189px;
+  width: 66px;
+  height: 22px;
+}
+#menu3 {
+  position: absolute;
+  left: 457px;
+  top: 189px;
+  width: 66px;
+  height: 22px;
+}
+#menu4 {
+  position: absolute;
+  left: 532px;
+  top: 189px;
+  width: 66px;
+  height: 22px;
+}
+#menu1:hover {
+  background-image: url('images/menu1.png');
+}
+#menu2:hover {
+  background-image: url('images/menu2.png');
+}
+#menu3:hover {
+  background-image: url('images/menu3.png');
+}
+#menu4:hover {
+  background-image: url('images/menu4.png');
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* 메뉴 검색창 */
+#search_text {
+  position: absolute;
+  left: 663px;
+  top: 191px;
+  width: 119px;
+  height: 21px;
+  font-size: 13px;
+}
+/* 검색버튼 */
+#search_btn {
+  position: absolute;
+  left: 782px;
+  top: 191px;
+  width: 69px;
+  height: 23px;
+  border-style: none;
+  border-width: 0px;
+  background-image: url('images/findButton.png');
+}
+#search_btn:hover {
+  background-image: url('images/findButton2.png');
 }
 
-.App-link {
-  color: #61dafb;
+/* 메인 탑 */
+/* 탑 캐러셀 */
+#top_carousel {
+  position: absolute;
+  left: 62px;
+  top: 317px;
+  width: 397px;
+  height: 319px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 탑 맵 */
+#top_map {
+  position: absolute;
+  left: 477px;
+  top: 327px;
+  width: 373px;
+  height: 297px;
+}
+
+/* 메인 미드 레프트*/
+/* 가이드 */
+#guide {
+  position: absolute;
+  left: 9px;
+  top: 659px;
+  width: 198px;
+  height: 134px;
+}
+#guide:hover {
+  background-image: url('images/guide.png');
+}
+
+/* 이달의 여행지 */
+#monthly_rank {
+  position: absolute;
+  left: 50px;
+  top: 957px;
+}
+#monthly_rank li {
+  height: 23px;
+}
+#monthly_rank a {
+  font-size: 12px;
+  line-height: 0%;
+  text-decoration: none;
+}
+
+/* 미드 레프트 캐러셀 */
+#left_carousel {
+  position: absolute;
+  left: 57px;
+  top: 1319px;
+  width: 130px;
+}
+#left_carousel_box {
+  height: 98px;
+}
+/* 플레이 버튼 */
+#left_carousel_play_bt {
+  position: absolute;
+  left: 168px;
+  top: 1312px;
+  width: 35px;
+  height: 11px;
+  background-image: url('images/cpause.png');
+}
+
+/* 인디케이터 스타일 */
+#indi1 {
+  position: absolute;
+  left: 56px;
+  top: 1494px;
+  width: 17px;
+  height: 24px;
+}
+#indi2 {
+  position: absolute;
+  left: 74px;
+  top: 1494px;
+  width: 17px;
+  height: 24px;
+}
+#indi3 {
+  position: absolute;
+  left: 92px;
+  top: 1494px;
+  width: 17px;
+  height: 24px;
+}
+#indi4 {
+  position: absolute;
+  left: 110px;
+  top: 1494px;
+  width: 17px;
+  height: 24px;
+}
+#indi5 {
+  position: absolute;
+  left: 128px;
+  top: 1495px;
+  width: 17px;
+  height: 24px;
+}
+#indi6 {
+  position: absolute;
+  left: 146px;
+  top: 1495px;
+  width: 17px;
+  height: 24px;
+}
+#indi7 {
+  position: absolute;
+  left: 164px;
+  top: 1495px;
+  width: 17px;
+  height: 24px;
+}
+/* 인디케이터 스타일 끝 */
+
+/* 게시판들 수정*/
+#board_list {
+  margin-top: 170px;
+  margin-left: 51px;
+  width: 824px;
+}
+#board_content {
+  margin-top: 170px;
+}
+#write_content {
+  margin-top: 170px;
+  margin-left: 251px;
+}
+#notice {
+  background-color: white;
+}
+#board_list table {
+  background-color: white;
+}
+#reserv_table table td {
+  text-align: center;
+  font-size: 15px;
 }
