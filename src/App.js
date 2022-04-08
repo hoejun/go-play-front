@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-//최신최신
+//최신
 function App() {
   return (
     <div className='App'>
